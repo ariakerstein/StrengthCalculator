@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="styles/cakeform.css" rel="stylesheet" type="text/css" />
+<title>Strength in Numbers - Weight Calculator</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+</head>
+<body>
+<!-- 	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+				<a href="#" class="navbar-brand">Koffee</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-nav-demo">
+				<ul class="nav navbar-nav">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Sign Up</a></li>
+					<li><a href="#">Login</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav> -->
+
+<!-- DEFAULT NAVBAR -->
+
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+  <div class="row">
+ <div class="jumbotron">
+  <h1 class="display-3">Strength in numbers</h1>
+  <p class="lead">Simple 1 rep max calculator</p>
+  <hr class="my-4">
+  <p class="lead">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Calculate
+</button>
+  </p>
+
+
+<body onload='hideTotal()'>
+    <div id="wrap">
+        <form action="" id="cakeform" onsubmit="return false;">
+        <div>
+            <div class="cont_order">
+               <fieldset>
+                <legend>Make your cake!</legend>
+                <label >Size Of the Cake</label>
+                <label class='radiolabel'><input type="radio"  name="selectedcake" value="Round6" onclick="calculateTotal()" />Round cake 6" -  serves 8 people ($20)</label><br/>
+                <label class='radiolabel'><input type="radio"  name="selectedcake" value="Round8" onclick="calculateTotal()" />Round cake 8" - serves 12 people ($25)</label><br/>
+                <label class='radiolabel'><input type="radio"  name="selectedcake" value="Round10" onclick="calculateTotal()" />Round cake 10" - serves 16 people($35)</label><br/>
+                <label class='radiolabel'><input type="radio"  name="selectedcake" value="Round12" onclick="calculateTotal()" />Round cake 12" - serves 30 people($75)</label><br/>
+                <br/>
+                <label >Filling</label>
+         
+                <select id="filling" name='filling' onchange="calculateTotal()">
+                <option value="None">Select Filling</option>
+                <option value="Lemon">Lemon($5)</option>
+                <option value="Custard">Custard($5)</option>
+                <option value="Fudge">Fudge($7)</option>
+                <option value="Mocha">Mocha($8)</option>
+                <option value="Raspberry">Raspberry($10)</option>
+                <option value="Pineapple">Pineapple($5)</option>
+                <option value="Dobash">Dobash($9)</option>
+                <option value="Mint">Mint($5)</option>
+                <option value="Cherry">Cherry($5)</option>
+                <option value="Apricot">Apricot($8)</option>
+                <option value="Buttercream">Buttercream($7)</option>
+                <option value="Chocolate Mousse">Chocolate Mousse($12)</option>
+               </select>
+                <br/>
+
+               
+                <p>
+                <label class="inlinelabel" for='includeinscription'>Include Inscription($20)</label>
+                <input type="checkbox" id="includeinscription" name="includeinscription" onclick="calculateTotal()" />
+                <input type="text"  id="theinscription" name="theinscription" value="Enter Inscription"  />
+                </p>
+                <div id="totalPrice"></div>
+                
+                </fieldset>
+            </div>
+            
+<!--           <div class="cont_details">
+              <fieldset>
+                <legend>Contact Details</legend>
+                <label for='name'>Name</label>
+                <input type="text" id="name" name='name' />
+                <br/>
+                <label for='address'>Address</label>
+                <input type="text" id="address" name='address' />
+                <br/>
+                <label for='phonenumber'>Phone Number</label>
+                <input type="text"  id="phonenumber" name='phonenumber'/>
+                <br/>
+                </fieldset>
+            </div> -->
+            <input type='submit' id='submit' value='Submit' onclick="calculateTotal()" />
+        </div>  
+       </form>
+  </div><!--End of wrap-->
+
+
+</div>
+</div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Flow Block</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <h3>Enter a title</h3>
+
+      <div class="progress">
+  <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
